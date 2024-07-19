@@ -1,11 +1,20 @@
 package com.hwtest
 
+import android.os.Bundle
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
-class MainActivity : ReactActivity() {
+class MainActivity: ReactActivity() {
+
+  /**
+   * This change is required for react-native-screens to avoid crashes related to View
+   * state being not persisted consistently across Activity restarts.
+   */
+  override fun onCreate(savedInstanceState: Bundle?) {
+      super.onCreate(null)
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule

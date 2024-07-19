@@ -1,8 +1,22 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { View, StyleSheet } from 'react-native';
 
 const App = () => {
-  return <View />;
+  return (
+    <SafeAreaProvider>
+      <GestureHandlerRootView style={styles.gestureHandler}>
+        <View />
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
+  );
 };
+
+const styles = StyleSheet.create({
+  gestureHandler: {
+    flexGrow: 1,
+  },
+});
 
 export default App;
