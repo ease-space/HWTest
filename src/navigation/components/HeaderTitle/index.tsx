@@ -7,7 +7,7 @@ const HeaderTitle: FunctionComponent<HeaderTitleProps> = (props) => {
   const { children, tintColor, onLayout } = props;
 
   return (
-    <Typography variant="title-large" fontWeight="extra-bold" color={tintColor} numberOfLines={1} onLayout={onLayout}>
+    <Typography variant="title-large" fontWeight="extra-bold" color={tintColor} onLayout={onLayout} numberOfLines={1}>
       {children}
     </Typography>
   );
