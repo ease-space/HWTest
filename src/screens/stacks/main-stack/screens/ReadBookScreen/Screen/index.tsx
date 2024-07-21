@@ -1,11 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+
+import ScreenLayout from '../../../../../../navigation/components/ScreenLayout';
 
 const Screen: FunctionComponent = () => {
   return (
-    <View>
+    <ScreenLayout>
       <Text>ReadBookScreen</Text>
-    </View>
+    </ScreenLayout>
   );
 };
 
