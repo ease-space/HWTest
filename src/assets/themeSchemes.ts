@@ -11,10 +11,17 @@ export type ThemeScheme = Theme & {
   colors: {};
 };
 
+const generalColors: Partial<ThemeScheme['colors']> = {
+  background: 'rgb(255, 255, 255)',
+  card: 'rgb(255, 255, 255)',
+  text: 'rgb(14, 14, 22)',
+};
+
 export const LightThemeScheme: ThemeScheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
+    ...generalColors,
   },
 };
 
@@ -22,6 +29,7 @@ export const DarkThemeScheme: ThemeScheme = {
   ...DarkTheme,
   colors: {
     ...DarkTheme.colors,
+    ...generalColors,
   },
 };
 
