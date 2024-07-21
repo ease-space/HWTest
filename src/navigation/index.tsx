@@ -6,7 +6,9 @@ import MainStackNavigator from '../screens/stacks/main-stack';
 
 import useInitThemeScheme from '../hooks/useInitThemeScheme';
 
-import { RootStackScreens } from './helpers/screens.ts';
+import { RootStackScreens } from './helpers/screens';
+
+import { getBaseScreenOptions } from './helpers/options';
 
 import { navigationRef } from './helpers';
 
@@ -19,7 +21,12 @@ const Navigation: FunctionComponent = () => {
 
   return (
     <NavigationContainer ref={navigationRef} theme={themeScheme}>
-      <RootStack.Navigator>
+      <RootStack.Navigator
+        screenOptions={{
+          ...getBaseScreenOptions(),
+          headerShown: false,
+        }}
+      >
         <RootStack.Screen name={RootStackScreens.MainStackNavigator} component={MainStackNavigator} />
       </RootStack.Navigator>
     </NavigationContainer>
