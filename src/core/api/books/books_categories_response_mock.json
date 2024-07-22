@@ -1,0 +1,106 @@
+{
+  "data": [
+    {
+      "id": "category_1",
+      "name": "Category 1",
+      "books":[
+        {
+          "id": "book_1",
+          "cover": "https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg",
+          "name": "Book 1",
+          "description": "Book 1 description",
+          "chapters": []
+        },
+        {
+          "id": "book_2",
+          "cover": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
+          "name": "Book 2",
+          "description": "Book 2 description",
+          "chapters": []
+        },
+        {
+          "id": "book_3",
+          "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KZ1NgDCph0JfyIDjOg3oZ7crBnipU6CFBQ&s",
+          "name": "Book 3",
+          "description": "Book 3 description",
+          "chapters": []
+        },
+        {
+          "id": "book_4",
+          "cover": "https://miblart.com/wp-content/uploads/2024/01/main-3-1-scaled.jpg",
+          "name": "Book 4",
+          "description": "Book 4 description",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "category_2",
+      "name": "Category 2",
+      "books":[
+        {
+          "id": "book_5",
+          "cover": "https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg",
+          "name": "Book 5",
+          "description": "Book 6 description",
+          "chapters": []
+        },
+        {
+          "id": "book_6",
+          "cover": "https://marketplace.canva.com/EAFPHUaBrFc/1/0/1003w/canva-black-and-white-modern-alone-story-book-cover-QHBKwQnsgzs.jpg",
+          "name": "Book 6",
+          "description": "Book 6 description",
+          "chapters": []
+        },
+        {
+          "id": "book_7",
+          "cover": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/contemporary-fiction-night-time-book-cover-design-template-1be47835c3058eb42211574e0c4ed8bf_screen.jpg?ts=1698210220",
+          "name": "Book 7",
+          "description": "Book 7 description",
+          "chapters": []
+        },
+        {
+          "id": "book_8",
+          "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp5JFbWH49-qnsoeGqnBryXUrfRbbOHRAs5A&s",
+          "name": "Book 8",
+          "description": "Book 8 description",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "category_3",
+      "name": "Category 3",
+      "books":[
+        {
+          "id": "book_9",
+          "cover": "https://bukovero.com/wp-content/uploads/2016/07/Harry_Potter_and_the_Cursed_Child_Special_Rehearsal_Edition_Book_Cover.jpg",
+          "name": "Book 9",
+          "description": "Book 9 description",
+          "chapters": []
+        },
+        {
+          "id": "book_10",
+          "cover": "https://marketplace.canva.com/EAFY729lDrY/1/0/1003w/canva-brown-mystery-novel-book-cover-4DDntvlI-Fc.jpg",
+          "name": "Book 10",
+          "description": "Book 10 description",
+          "chapters": []
+        },
+        {
+          "id": "book_11",
+          "cover": "https://marketplace.canva.com/EAFf0E5urqk/1/0/1003w/canva-blue-and-green-surreal-fiction-book-cover-53S3IzrNxvY.jpg",
+          "name": "Book 11",
+          "description": "Book 11 description",
+          "chapters": []
+        },
+        {
+          "id": "book_12",
+          "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB1hPNPbXQQcnGaK8UdBipxq4FPZXnRj6zyQ&s",
+          "name": "Book 12",
+          "description": "Book 12 description",
+          "chapters": []
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ export type RootStackParamList = {
 };
 
 export type MainStackParamList = {
-  BooksScreen: undefined;
+  BooksCategoriesScreen: undefined;
   ReadBookScreen: undefined;
 };
 
@@ -19,6 +19,6 @@ type MainStackScreenProps<T extends keyof MainStackParamList> = CompositeScreenP
 
 export type MainStackNavigatorProps = RootStackScreenProps<'MainStackNavigator'>;
 
-export type BooksScreenProps = MainStackScreenProps<'BooksScreen'>;
+export type BooksCategoriesScreenProps = MainStackScreenProps<'BooksCategoriesScreen'>;
 
 export type ReadBookScreenProps = MainStackScreenProps<'ReadBookScreen'>;

@@ -6,7 +6,7 @@ import Header from '../../../navigation/components/Header';
 
 import CloseButton from '../../../navigation/components/CloseButton';
 
-import BooksScreen from '../main-stack/screens/BooksScreen';
+import BooksCategoriesScreen from './screens/BooksCategoriesScreen';
 import ReadBookScreen from '../main-stack/screens/ReadBookScreen';
 
 import useThemeScheme from '../../../hooks/useThemeScheme';
@@ -24,7 +24,7 @@ const MainStackNavigator: FunctionComponent<MainStackNavigatorProps> = () => {
 
   const themeScheme = useThemeScheme();
 
-  const renderBooksScreenHeader = (headerProps: StackHeaderProps) => {
+  const renderBooksCategoriesScreenHeader = (headerProps: StackHeaderProps) => {
     return <Header {...headerProps} headerTitleShown={false} />;
   };
 
@@ -35,10 +35,10 @@ const MainStackNavigator: FunctionComponent<MainStackNavigatorProps> = () => {
       }}
     >
       <MainStack.Screen
-        name={MainStackScreens.BooksScreen}
-        component={BooksScreen}
+        name={MainStackScreens.BooksCategoriesScreen}
+        component={BooksCategoriesScreen}
         options={{
-          header: renderBooksScreenHeader,
+          header: renderBooksCategoriesScreenHeader,
         }}
       />
 
