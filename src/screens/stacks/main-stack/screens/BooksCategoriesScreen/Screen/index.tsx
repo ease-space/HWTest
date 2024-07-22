@@ -11,10 +11,11 @@ import { BooksCategory } from '../../../../../../core/api/books/responses';
 interface ScreenProps {
   loading: boolean;
   booksCategories: BooksCategory[];
+  onPressBook(chapters: string[]): void;
 }
 
 const Screen: FunctionComponent<ScreenProps> = (props) => {
-  const { loading, booksCategories } = props;
+  const { loading, booksCategories, onPressBook } = props;
 
   return (
     <ScreenLayout
@@ -26,7 +27,7 @@ const Screen: FunctionComponent<ScreenProps> = (props) => {
         </View>
       }
     >
-      <BooksCategoriesList loading={loading} booksCategories={booksCategories} />
+      <BooksCategoriesList loading={loading} booksCategories={booksCategories} onPressBook={onPressBook} />
     </ScreenLayout>
   );
 };

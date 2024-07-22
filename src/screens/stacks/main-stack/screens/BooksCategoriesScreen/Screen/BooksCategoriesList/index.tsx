@@ -1,4 +1,5 @@
 import React, { FunctionComponent, Fragment, useMemo } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SectionList, View, StyleSheet } from 'react-native';
 
 import Typography from '../../../../../../../components/Typography';
@@ -12,10 +13,13 @@ import { BooksCategory } from '../../../../../../../core/api/books/responses';
 interface BooksCategoriesListProps {
   loading: boolean;
   booksCategories: BooksCategory[];
+  onPressBook(chapters: string[]): void;
 }
 
 const BooksCategoriesList: FunctionComponent<BooksCategoriesListProps> = (props) => {
-  const { loading, booksCategories } = props;
+  const { loading, booksCategories, onPressBook } = props;
+
+  const insets = useSafeAreaInsets();
 
   const sections = useMemo(() => {
     return booksCategories.map((booksCategory) => {
@@ -30,7 +34,7 @@ const BooksCategoriesList: FunctionComponent<BooksCategoriesListProps> = (props)
     <SectionList
       sections={sections}
       extraData={sections}
-      contentContainerStyle={styles.listContentContainerStyle}
+      contentContainerStyle={[styles.listContentContainerStyle, { paddingBottom: insets.bottom }]}
       ListEmptyComponent={<StubList loading={loading} />}
       renderSectionHeader={({ section }) => {
         return (
@@ -41,7 +45,7 @@ const BooksCategoriesList: FunctionComponent<BooksCategoriesListProps> = (props)
               </Typography>
             </View>
 
-            <BooksList books={section.data} />
+            <BooksList books={section.data} onPressBook={onPressBook} />
           </Fragment>
         );
       }}
