@@ -21,7 +21,7 @@ const BooksCategoriesScreen: FunctionComponent<BooksCategoriesScreenProps> = (pr
     (chapters: string[]) => {
       navigation.navigate(MainStackScreens.ReadBookScreen, {
         chapters,
-        currentChapterIndex: 0,
+        chapterIndex: 0,
       });
     },
     [navigation],
