@@ -3,7 +3,9 @@ import { StyleSheet, ViewStyle } from 'react-native';
 
 import Header from '../components/Header';
 
-export const getBaseScreenOptions = (headerInsetsTop = 0): StackNavigationOptions => {
+import { ThemeScheme } from '../../assets/themeSchemes';
+
+export const getBaseScreenOptions = (headerInsetsTop = 0, themeScheme?: ThemeScheme): StackNavigationOptions => {
   const headerStyle: ViewStyle = {
     height: headerInsetsTop + 52,
   };
@@ -12,6 +14,7 @@ export const getBaseScreenOptions = (headerInsetsTop = 0): StackNavigationOption
     header: Header,
     headerMode: 'screen',
     headerTitleAlign: 'center',
+    headerTintColor: themeScheme?.colors.text,
     headerStyle: [styles.header, headerStyle],
     headerLeftContainerStyle: styles.headerLeftContainer,
     headerRightContainerStyle: styles.headerRightContainer,
