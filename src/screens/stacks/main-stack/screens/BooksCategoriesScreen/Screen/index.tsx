@@ -1,35 +1,38 @@
 import React, { FunctionComponent } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import ScreenLayout from '../../../../../../navigation/components/ScreenLayout';
 import Typography from '../../../../../../components/Typography';
 
+import BooksCategoriesList from './BooksCategoriesList';
+
+import { BooksCategory } from '../../../../../../core/api/books/responses';
+
 interface ScreenProps {
-  onPressReadBook(): void;
+  loading: boolean;
+  booksCategories: BooksCategory[];
 }
 
 const Screen: FunctionComponent<ScreenProps> = (props) => {
-  const { onPressReadBook } = props;
+  const { loading, booksCategories } = props;
 
   return (
     <ScreenLayout
       header={
-        <View style={styles.header}>
+        <View style={styles.screenLayoutHeader}>
           <Typography variant="display-small" fontWeight="extra-bold" numberOfLines={1}>
             Discover
           </Typography>
         </View>
       }
     >
-      <Text>BooksScreen</Text>
-
-      <Button title="Navigate to ReadBookScreen" onPress={onPressReadBook} />
+      <BooksCategoriesList loading={loading} booksCategories={booksCategories} />
     </ScreenLayout>
   );
 };
 
 const styles = StyleSheet.create({
-  header: {
+  screenLayoutHeader: {
     height: 52,
     paddingHorizontal: 20,
     justifyContent: 'center',

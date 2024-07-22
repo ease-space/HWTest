@@ -8,14 +8,17 @@ export enum ThemeSchemes {
 }
 
 export type ThemeScheme = Theme & {
-  colors: {};
+  colors: {
+    gray: string;
+  };
 };
 
-const generalColors: Partial<ThemeScheme['colors']> = {
+const generalColors = {
   background: 'rgb(255, 255, 255)',
   card: 'rgb(255, 255, 255)',
   text: 'rgb(14, 14, 22)',
   border: 'rgb(240, 241, 247)',
+  gray: 'rgb(132, 134, 148)',
 };
 
 export const LightThemeScheme: ThemeScheme = {

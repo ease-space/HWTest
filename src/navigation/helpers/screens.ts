@@ -3,6 +3,6 @@ export const RootStackScreens = {
 } as const;
 
 export const MainStackScreens = {
-  BooksScreen: 'BooksScreen',
+  BooksCategoriesScreen: 'BooksCategoriesScreen',
   ReadBookScreen: 'ReadBookScreen',
 } as const;
