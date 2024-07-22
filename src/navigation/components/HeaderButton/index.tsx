@@ -5,7 +5,7 @@ const HeaderButton: FunctionComponent<TouchableOpacityProps> = (props) => {
   const { children, ...otherProps } = props;
 
   return (
-    <TouchableOpacity {...otherProps} style={styles.headerButton}>
+    <TouchableOpacity {...otherProps} style={styles.headerButton} activeOpacity={0.8}>
       {children}
     </TouchableOpacity>
   );

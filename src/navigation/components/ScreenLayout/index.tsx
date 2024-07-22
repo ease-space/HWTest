@@ -6,10 +6,11 @@ import useThemeScheme from '../../../hooks/useThemeScheme';
 
 interface ScreenLayoutProps extends PropsWithChildren {
   header?: ReactNode;
+  footer?: ReactNode;
 }
 
 const ScreenLayout: FunctionComponent<ScreenLayoutProps> = (props) => {
-  const { children, header } = props;
+  const { children, header, footer } = props;
 
   const insets = useSafeAreaInsets();
 
@@ -26,6 +27,8 @@ const ScreenLayout: FunctionComponent<ScreenLayoutProps> = (props) => {
       {header}
 
       <View style={[styles.screenLayout, screenLayoutStyle]}>{children}</View>
+
+      {footer}
     </Fragment>
   );
 };

@@ -9,15 +9,18 @@ export enum ThemeSchemes {
 
 export type ThemeScheme = Theme & {
   colors: {
+    white: string;
     gray: string;
   };
 };
 
 const generalColors = {
+  primary: 'rgb(98, 9, 217)',
   background: 'rgb(255, 255, 255)',
   card: 'rgb(255, 255, 255)',
   text: 'rgb(14, 14, 22)',
   border: 'rgb(240, 241, 247)',
+  white: 'rgb(255, 255, 255)',
   gray: 'rgb(132, 134, 148)',
 };
 

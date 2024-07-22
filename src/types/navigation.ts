@@ -1,16 +1,18 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import { CompositeScreenProps } from '@react-navigation/native';
 
+interface ReadBookScreenParams {
+  chapters: string[];
+  chapterIndex: number;
+}
+
 export type RootStackParamList = {
   MainStackNavigator: undefined;
 };
 
 export type MainStackParamList = {
   BooksCategoriesScreen: undefined;
-  ReadBookScreen: {
-    chapters: string[];
-    currentChapterIndex: number;
-  };
+  ReadBookScreen: ReadBookScreenParams;
 };
 
 type RootStackScreenProps<T extends keyof RootStackParamList> = StackScreenProps<RootStackParamList, T>;
