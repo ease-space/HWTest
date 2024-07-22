@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import FastImage from 'react-native-fast-image';
 
 import Typography from '../../../../../../../components/Typography';
@@ -10,23 +10,26 @@ import { Book } from '../../../../../../../core/api/books/responses';
 
 interface BooksListItemProps {
   item: Book;
+  onPressBook(chapters: string[]): void;
 }
 
 const BooksListItem: FunctionComponent<BooksListItemProps> = (props) => {
-  const { item } = props;
+  const { item, onPressBook } = props;
 
-  const { cover, description } = item;
+  const { cover, description, chapters } = item;
 
   const themeScheme = useThemeScheme();
 
+  const onPress = () => onPressBook(chapters);
+
   return (
-    <View style={styles.listItem}>
+    <TouchableOpacity style={styles.listItem} activeOpacity={0.8} onPress={onPress}>
       <FastImage style={styles.cover} source={{ uri: cover }} />
 
-      <Typography variant="label-medium" color={themeScheme.colors.gray} numberOfLines={2}>
+      <Typography style={styles.description} variant="label-medium" color={themeScheme.colors.gray} numberOfLines={2}>
         {description}
       </Typography>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -41,6 +44,9 @@ const styles = StyleSheet.create({
     height: 222,
     borderRadius: 8,
     overflow: 'hidden',
+  },
+  description: {
+    marginTop: 6,
   },
 });
 

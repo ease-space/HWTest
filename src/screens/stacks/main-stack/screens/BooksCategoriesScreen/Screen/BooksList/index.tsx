@@ -7,14 +7,18 @@ import { Book } from '../../../../../../../core/api/books/responses';
 
 interface BooksListProps {
   books: Book[];
+  onPressBook(chapters: string[]): void;
 }
 
 const BooksList: FunctionComponent<BooksListProps> = (props) => {
-  const { books } = props;
+  const { books, onPressBook } = props;
 
-  const renderItem = useCallback(({ item }: ListRenderItemInfo<Book>) => {
-    return <BooksListItem item={item} />;
-  }, []);
+  const renderItem = useCallback(
+    ({ item }: ListRenderItemInfo<Book>) => {
+      return <BooksListItem item={item} onPressBook={onPressBook} />;
+    },
+    [onPressBook],
+  );
 
   return (
     <FlatList

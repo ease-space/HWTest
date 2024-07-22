@@ -7,7 +7,10 @@ export type RootStackParamList = {
 
 export type MainStackParamList = {
   BooksCategoriesScreen: undefined;
-  ReadBookScreen: undefined;
+  ReadBookScreen: {
+    chapters: string[];
+    currentChapterIndex: number;
+  };
 };
 
 type RootStackScreenProps<T extends keyof RootStackParamList> = StackScreenProps<RootStackParamList, T>;
