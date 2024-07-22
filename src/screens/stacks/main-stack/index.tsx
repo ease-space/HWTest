@@ -4,8 +4,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Header from '../../../navigation/components/Header';
 
+import CloseButton from '../../../navigation/components/CloseButton';
+
 import BooksScreen from '../main-stack/screens/BooksScreen';
 import ReadBookScreen from '../main-stack/screens/ReadBookScreen';
+
+import useThemeScheme from '../../../hooks/useThemeScheme';
 
 import { MainStackScreens } from '../../../navigation/helpers/screens';
 
@@ -16,7 +20,9 @@ import { MainStackParamList, MainStackNavigatorProps } from '../../../types/navi
 const MainStack = createStackNavigator<MainStackParamList>();
 
 const MainStackNavigator: FunctionComponent<MainStackNavigatorProps> = () => {
-  const safeAreaInsets = useSafeAreaInsets();
+  const insets = useSafeAreaInsets();
+
+  const themeScheme = useThemeScheme();
 
   const renderBooksScreenHeader = (headerProps: StackHeaderProps) => {
     return <Header {...headerProps} headerTitleShown={false} />;
@@ -25,7 +31,7 @@ const MainStackNavigator: FunctionComponent<MainStackNavigatorProps> = () => {
   return (
     <MainStack.Navigator
       screenOptions={{
-        ...getBaseScreenOptions(safeAreaInsets.top),
+        ...getBaseScreenOptions(insets.top, themeScheme),
       }}
     >
       <MainStack.Screen
@@ -39,6 +45,7 @@ const MainStackNavigator: FunctionComponent<MainStackNavigatorProps> = () => {
       <MainStack.Group
         screenOptions={{
           ...getModalScreenOptions(),
+          headerLeft: CloseButton,
         }}
       >
         <MainStack.Screen name={MainStackScreens.ReadBookScreen} component={ReadBookScreen} />

@@ -15,6 +15,7 @@ const generalColors: Partial<ThemeScheme['colors']> = {
   background: 'rgb(255, 255, 255)',
   card: 'rgb(255, 255, 255)',
   text: 'rgb(14, 14, 22)',
+  border: 'rgb(240, 241, 247)',
 };
 
 export const LightThemeScheme: ThemeScheme = {

@@ -2,6 +2,8 @@ import React, { FunctionComponent, PropsWithChildren, ReactNode, Fragment } from
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { View, ViewStyle, StyleSheet } from 'react-native';
 
+import useThemeScheme from '../../../hooks/useThemeScheme';
+
 interface ScreenLayoutProps extends PropsWithChildren {
   header?: ReactNode;
 }
@@ -9,11 +11,14 @@ interface ScreenLayoutProps extends PropsWithChildren {
 const ScreenLayout: FunctionComponent<ScreenLayoutProps> = (props) => {
   const { children, header } = props;
 
-  const safeAreaInsets = useSafeAreaInsets();
+  const insets = useSafeAreaInsets();
+
+  const themeScheme = useThemeScheme();
 
   const screenLayoutStyle: ViewStyle = {
-    paddingLeft: safeAreaInsets.left,
-    paddingRight: safeAreaInsets.right,
+    paddingLeft: insets.left,
+    paddingRight: insets.right,
+    borderTopColor: themeScheme.colors.border,
   };
 
   return (
@@ -29,6 +34,7 @@ const styles = StyleSheet.create({
   screenLayout: {
     flexGrow: 1,
     flexShrink: 1,
+    borderTopWidth: 1,
   },
 });
 
